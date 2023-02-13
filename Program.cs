@@ -14,7 +14,7 @@ string[] UserArray()
         {
             count++;
             array = new string[count];
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.Length-1; i++)
             {
                 array[i] = arrayResult[i];
             }
@@ -22,5 +22,17 @@ string[] UserArray()
             arrayResult = array;
         }
     } while (word != "");
+    return arrayResult;
+}
+
+void PrintArray(string[] array)
+{
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"\"{array[i]}\"");
+        if(i < array.Length-1) Console.Write(", ");
+        else Console.Write("]");
+    }
 }
 
