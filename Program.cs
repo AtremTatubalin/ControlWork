@@ -36,3 +36,27 @@ void PrintArray(string[] array)
     }
 }
 
+string[] NewArray(string[] array)
+{
+    int count = 0;
+    int count1 = 0;
+    string s = "";
+    for (int i = 0; i < array.Length; i++)
+    {
+        s = array[i];
+        if(s.Length <= 3) count++;
+    }
+    string[] result = new string[count];
+    for (int i = 0; i < array.Length; i++)
+    {
+        s = array[i];
+        if(s.Length <= 3) result[count1] = s; count1++;
+    }
+    return result;
+}
+
+string[] userArray = UserArray();
+string[] newArray = NewArray(userArray);
+
+if(newArray.Length == 0) Console.WriteLine("[]");
+else PrintArray(newArray);
